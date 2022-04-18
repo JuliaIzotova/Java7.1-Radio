@@ -35,6 +35,7 @@ class RadioTest {
         radio.setPrevRadioStation();
         assertEquals(expected, radio.getCurrentRadioStation());
     }
+
     @Test
     void shouldSwitchAfterNineStation() {
         int station = 9;
@@ -44,6 +45,7 @@ class RadioTest {
         radio.setNextRadioStation();
         assertEquals(expected, radio.getCurrentRadioStation());
     }
+
     @Test
     void shouldSwitchAfterZeroStationDown() {
         int station = 0;
@@ -62,6 +64,7 @@ class RadioTest {
         radio.setCurrentRadioStation(station);
         assertEquals(expected, radio.getCurrentRadioStation());
     }
+
     @Test
     void shouldCheckStationsLimitDown() {
         int station = 10;
@@ -70,6 +73,7 @@ class RadioTest {
         radio.setCurrentRadioStation(station);
         assertEquals(expected, radio.getCurrentRadioStation());
     }
+
     @Test
     void shouldGetCurrentVolume() {
         int volume = 5;
@@ -77,10 +81,6 @@ class RadioTest {
 
         radio.setCurrentVolume(volume);
         assertEquals(expected, radio.getCurrentVolume());
-    }
-
-    @Test
-    void setCurrentVolume() {
     }
 
     @Test
