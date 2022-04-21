@@ -24,6 +24,12 @@ class RadioTest {
         assertEquals(expected, radio.getCurrentRadioStation());
     }
 
+    @Test
+    void shouldCountRadioStations() {
+        int expected = 0;
+        radio.setCurrentRadioStation(10);
+        assertEquals(expected, radio.getCurrentRadioStation());
+    }
 
     @Test
     void shouldSetNextRadioStation() {
