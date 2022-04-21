@@ -6,7 +6,7 @@ public class Radio {
     private int currentRadioStation;
     private int maxVolume = 100;
     private int minVolume = 0;
-    private int currentVolume = 50;
+    private int currentVolume;
 
     public Radio() {
         this.maxRadioStation = 9;
