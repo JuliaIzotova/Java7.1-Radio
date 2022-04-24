@@ -15,6 +15,24 @@ class RadioTest {
         assertEquals(expected, radio.getCurrentRadioStation());
     }
 
+    @Test
+    void shouldCountRadioStationsUp() {
+        Radio radio = new Radio (12);
+        int station = 11;
+        int expected = 0;
+        radio.setCurrentRadioStation(station);
+        radio.setNextRadioStation();
+        assertEquals(expected, radio.getCurrentRadioStation());
+    }
+    @Test
+    void shouldCountRadioStationsDown() {
+        Radio radio = new Radio (5);
+        int station = 0;
+        int expected = 4;
+        radio.setCurrentRadioStation(station);
+        radio.setPrevRadioStation();
+        assertEquals(expected, radio.getCurrentRadioStation());
+    }
 
     @Test
     void shouldSetNextRadioStation() {
@@ -76,8 +94,8 @@ class RadioTest {
 
     @Test
     void shouldGetCurrentVolume() {
-        int volume = 5;
-        int expected = 5;
+        int volume = 50;
+        int expected = 50;
 
         radio.setCurrentVolume(volume);
         assertEquals(expected, radio.getCurrentVolume());
@@ -85,8 +103,8 @@ class RadioTest {
 
     @Test
     void shouldIncreaseVolume() {
-        int volume = 5;
-        int expected = 6;
+        int volume = 50;
+        int expected = 51;
 
         radio.setCurrentVolume(volume);
         radio.increaseVolume();
@@ -95,8 +113,8 @@ class RadioTest {
 
     @Test
     void shouldDecreaseVolume() {
-        int volume = 5;
-        int expected = 4;
+        int volume = 50;
+        int expected = 49;
 
         radio.setCurrentVolume(volume);
         radio.decreaseVolume();
@@ -105,8 +123,8 @@ class RadioTest {
 
     @Test
     void shouldCheckVolumeUp() {
-        int volume = 10;
-        int expected = 10;
+        int volume = 100;
+        int expected = 100;
 
         radio.setCurrentVolume(volume);
         radio.increaseVolume();
@@ -125,7 +143,7 @@ class RadioTest {
 
     @Test
     void shouldCheckVolumeLimitUp() {
-        int volume = 11;
+        int volume = 110;
         int expected = 0;
 
         radio.setCurrentVolume(volume);
