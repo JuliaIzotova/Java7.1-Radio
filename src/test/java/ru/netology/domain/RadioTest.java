@@ -16,18 +16,21 @@ class RadioTest {
     }
 
     @Test
-    void shouldCheckSumRadioStations() {
-        int sumRadioStations = 30;
-        Radio radio = new Radio (sumRadioStations);
-        int expected = 10;
-        radio.setCurrentRadioStation(10);
+    void shouldCountRadioStationsUp() {
+        Radio radio = new Radio (12);
+        int station = 11;
+        int expected = 0;
+        radio.setCurrentRadioStation(station);
+        radio.setNextRadioStation();
         assertEquals(expected, radio.getCurrentRadioStation());
     }
-
     @Test
-    void shouldCountRadioStations() {
-        int expected = 0;
-        radio.setCurrentRadioStation(10);
+    void shouldCountRadioStationsDown() {
+        Radio radio = new Radio (5);
+        int station = 0;
+        int expected = 4;
+        radio.setCurrentRadioStation(station);
+        radio.setPrevRadioStation();
         assertEquals(expected, radio.getCurrentRadioStation());
     }
 
